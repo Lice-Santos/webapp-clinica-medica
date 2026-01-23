@@ -8,7 +8,7 @@ export default function PrivateLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen">
+<div className="flex min-h-screen">
 
       {/* Sidebar */}
       <BarraDeNavegacao />

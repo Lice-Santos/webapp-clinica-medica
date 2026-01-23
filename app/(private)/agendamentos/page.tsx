@@ -1,7 +1,7 @@
+import AgendamentosComponents from "@/app/components/AgendamentosComponents";
+
 export default function Agendamentos(){
     return (
-        <div>
-            <h1>Agendamentos</h1>
-        </div>
+        <AgendamentosComponents />
     )
 }

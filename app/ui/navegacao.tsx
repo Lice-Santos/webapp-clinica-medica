@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function BarraDeNavegacao() {
   return (
-    <aside className="h-screen w-55 bg-primary-500 flex flex-col p-4 gap-6">
+    <aside className="w-55 min-h-screen bg-primary-500 flex flex-col p-4 gap-6">
       <h2 className="text-white text-xl font-bold">Menu</h2>
 
       <nav className="flex flex-col gap-3">

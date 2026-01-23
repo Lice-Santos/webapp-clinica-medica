@@ -11,6 +11,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-primary-500: oklch(0.70 0.29 74);
+  --color-primary-hover: oklch(0.75 0.29 72);
   --color-second-500: oklch(0.95 0.18 75);
   --color-card-background: oklch(96.6% 0.002 17.2);
   --color-fonts-primary: oklch(57.6% 0.000 89.9)
