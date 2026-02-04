@@ -65,8 +65,8 @@ const data: CardConsultaProps[] = [
 ];
 export default function HistoricoComponents() {
     return (
-        <div className="p-4">
-            <h1 className="text-2xl text-primary-500 font-bold mb-4">Histórico de Consultas</h1>
+        <div >
+            <h1 className="text-2xl text-center text-primary-500 font-bold mb-4">Histórico de Consultas</h1>
             <CardsTopoHistorico 
                 rendimentoTotal={dataCards.rendimentoTotal}
                 consultasAtendidas={dataCards.consultasAtendidas}

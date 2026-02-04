@@ -22,7 +22,7 @@ const data2 = {
 export default function HomeComponents() {
     return (
         <div className="flex flex-col items-center">
-            <h1 className="text-primary-500 text-2xl pb-4">Bem vindo ao TriAqui</h1>
+            <h1 className="text-2xl text-center text-primary-500 font-bold mb-4">Bem vindo ao TriAqui</h1>
             <div className="w-full flex gap-2 ">
                 <CardTopoHome dados={data1.dados} tituloCard={data1.tituloCard} />
                 <CardTopoHome dados={data2.dados} tituloCard={data2.tituloCard} />

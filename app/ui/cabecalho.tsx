@@ -1,7 +1,16 @@
-export default function Cabecalho(){
-    return <header className="bg-second-500 p-4">
+import Image from "next/image"
 
-        Cabeçalho da pagina
-        
+export default function Cabecalho(){
+    return (
+        <header className="bg-orange-200 p-2 flex items-center gap-3">
+            <Image
+            src="/images/logoOficial.svg"
+            alt="Logo oficial"
+            width={80}
+            height={40}
+            />
+
+            <span className="text-primary-500">TriAqui</span>
         </header>
+    )
 }
