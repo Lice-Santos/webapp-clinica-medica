@@ -1,8 +1,15 @@
 import { consultaJaFinalizada } from "../hooks/consultaJaFinalizada";
-import { ordenarConsultas } from "../hooks/ordenarConsultas";
-import verificarSeEhHoje from "../hooks/verificarSeEhHoje";
-import CardConsulta from "./CardConsulta";
+import CardHistoricoConsulta from "./CardHistoricoConsulta";
+import CardsTopoHistorico from "./CardsTopoHistorico";
 
+const dataCards: DataCardsHistorico = {
+    rendimentoTotal: 15650.82,
+    consultasAtendidas: 120,
+    consultasCanceladas: 650.82,
+    ticketMedio: 130.42,
+    taxaCancelamento: 5.2,
+    faltas: 12,
+}
 
 const data: CardConsultaProps[] = [
     {
@@ -56,35 +63,25 @@ const data: CardConsultaProps[] = [
     },
 
 ];
-
-const consultasOrdenadas = ordenarConsultas(data); 
-
-
-export default function AgendamentosComponents(){
+export default function HistoricoComponents() {
     return (
-        <div>
+        <div className="p-4">
+            <h1 className="text-2xl text-primary-500 font-bold mb-4">Histórico de Consultas</h1>
+            <CardsTopoHistorico 
+                rendimentoTotal={dataCards.rendimentoTotal}
+                consultasAtendidas={dataCards.consultasAtendidas}
+                consultasCanceladas={dataCards.consultasCanceladas}
+                ticketMedio={dataCards.ticketMedio}
+                taxaCancelamento={dataCards.taxaCancelamento}
+                faltas={dataCards.faltas}
+            
+            />
+            <h2 className="text-xl text-fonts-primary font-semibold mt-4">Histórico de Consultas</h2>
             <div>
-
-            <h1 className="text-primary-500 font-bold text-center text-2xl">Agendamentos</h1>
-            <h2 className="text-fonts-primary font-semibold text-xl">Consultas hoje</h2>
-
-            {consultasOrdenadas.filter((consulta) => verificarSeEhHoje(consulta.data)).length > 0 ? (
-                consultasOrdenadas.filter((consulta) => verificarSeEhHoje(consulta.data)).map((consulta) => (
-                    <CardConsulta key={consulta.id} {...consulta} />
-                ))
-            ) : (
-                <p className=" text-gray-500 mt-4">Nenhuma consulta agendada para hoje.</p>
-            )}
-
+                {data.filter((consulta) => consultaJaFinalizada(consulta.data)).map((consulta) => (
+                    <CardHistoricoConsulta key={consulta.id} consulta={consulta} />
+                ))}
             </div>
-            <div className="mt-6">
-
-            <h2 className="text-fonts-primary font-semibold text-xl">Próximas Consultas</h2>
-            {consultasOrdenadas.filter((consulta) => !verificarSeEhHoje(consulta.data) && !consultaJaFinalizada(consulta.data)).map((consulta) => (
-                <CardConsulta key={consulta.id} {...consulta} />
-            ))}
-            </div>
-
         </div>
-    )
+    );
 }

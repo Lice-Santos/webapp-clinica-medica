@@ -24,6 +24,14 @@ interface Paciente {
     endereco: string;
     historicoMedico: string;
 }
+interface DataCardsHistorico {
+    rendimentoTotal: number;
+    consultasAtendidas: number;
+    consultasCanceladas: number;
+    ticketMedio: number;
+    taxaCancelamento: number;
+    faltas: number;
+}
 
 interface DialogDetalhesConsultaProps {
   open: boolean;
