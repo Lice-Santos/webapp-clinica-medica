@@ -1,7 +1,7 @@
+import ListaPacienteComponents from "@/app/components/ListaPacienteComponents";
+
 export default function Pacientes(){
     return (
-        <div>
-            <h1>Lista de Pacientes</h1>
-        </div>
+        <ListaPacienteComponents />
     )
 }

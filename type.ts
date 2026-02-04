@@ -13,6 +13,17 @@ interface ConsultasProps {
   consultas: CardConsultaProps[];
 }
 
+interface Paciente {
+    id: number;
+    nome: string;
+    dataNascimento: string;
+    cpf: string;
+    genero: string;
+    telefone: string;
+    email: string;
+    endereco: string;
+    historicoMedico: string;
+}
 
 interface DialogDetalhesConsultaProps {
   open: boolean;
